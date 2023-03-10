@@ -1,4 +1,9 @@
 import re
+import pandas as pd
+import numpy
+import math
+import sklearn
+import spacy
 
 # Charger le fichier 
 with open("../gd-fiscalite_depenses-utf8-sgml-cwb.txt", "r", encoding="utf8") as f:
