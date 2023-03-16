@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 with open("../fichier_sans_lignes_vides.txt", "r", encoding="utf8") as f:
     lines = f.readlines()
 
@@ -23,9 +25,9 @@ for i in range(len(lines)):
         break 
 # print(d_title)
 
-for elt in d_title:
-    if len(d_title[elt]) > 1:
-        print(elt,"---",len(d_title[elt]))  
+# for elt in d_title:
+#     if len(d_title[elt]) > 1:
+#         print(elt,"---",len(d_title[elt]))  
 #affiche le nombre de thèmes qui apparaisse + de 2 fois, et c'est souvent 2 fois max donc pas fou de faire une analyse sur les thèmes sauf si on les généralise mais c'est risqué sur des questions précises
 
 
@@ -50,5 +52,6 @@ for i in range(len(lines)):
 # print(d_dept)
 
 for elt in d_dept:
-    print(elt,"---",len(d_dept[elt])) 
+    d_dept[elt] = len(d_dept[elt])
+    # print(elt,"---",d_dept[elt]) 
 #par départment c'est déjà mieux (données sur 100 départements)
