@@ -37,7 +37,9 @@ for i in range(len(lines)):
         p = ""
         boo = False
         for j in range(len(lines[i])):
-            if lines[i][j-12:j] == 'department="':
+            # if lines[i][j-12:j] == 'department="': #par nom de departement
+            # if lines[i][j-8:j] == 'region="':  #par region
+            if lines[i][j-15:j] == 'departmentiso="':  #par numéro de departement
                 boo = True
             if lines[i][j] == '"':
                 boo = False
@@ -47,11 +49,15 @@ for i in range(len(lines)):
             d_dept[p].append(i)
         else:
             d_dept[p] = [i]
-    # if i > 50:
+    # if i > 100000:
     #     break
 # print(d_dept)
 
 for elt in d_dept:
     d_dept[elt] = len(d_dept[elt])
-    # print(elt,"---",d_dept[elt]) 
+    print(elt,"---",d_dept[elt]) 
 #par départment c'est déjà mieux (données sur 100 départements)
+
+#trier de manière décroissante
+sorted_d = dict(sorted(d_dept.items(), key=lambda x: x[1], reverse=True))
+print(sorted_d)
